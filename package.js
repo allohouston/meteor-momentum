@@ -6,9 +6,15 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('METEOR@0.9.2');
-  api.use(['templating', 'check', 'jquery', 'underscore', 'velocityjs:velocityjs@1.2.1'
+  api.versionsFrom('METEOR@0.9.2', "3.0");
+  api.use(['templating', 'check', 'jquery@1.11.9 || 3.0.0', 'underscore'
       ], 'client');
+
+  api.addFiles([
+            'velocity.min.js',
+            'velocity.ui.js'
+        ], "client"
+  );
 
   api.addFiles([
     'momentum.html',
